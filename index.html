@@ -1,208 +1,462 @@
-<style>
-    .subscribe-button{background-color: rgb(255, 4, 4);color:white;border:none;
-        height:36px;
-        width:105px;
-        border-radius: 5px;
-        cursor:pointer;
-    transition: background-color 0.6s;
-    }
-    
-    .subscribe-button:hover{
-        background-color: green;
-    }
-    
-    .subscribe-button:active{
-        background-color: blueviolet;
-    }
-    
-    
-    
-    
-    </style>
-    <button class="teacher-moh-button">Teacher Moh</button>
-    <style>
-    .teacher-moh-button{background-color: rgb(83, 5, 172);color:white;border:none;
-        height:36px;
-        width:105px;
-        border-radius: 5px;
-        cursor:pointer;
-    box-shadow: 1px 1px 1px red;
-    }
-    
-    
-    .teacher-moh-button:hover{
-        background-color: darkviolet;
-    }
-    .teacher-moh-button:active{
-        background-color: chartreuse;
-    }
-    
-    </style>
-    <bUtton class="subscribe-button">SUBSCRIBE</button> 
-        <button class="WhatsApp-button">WhatsApp</button>
-        <style>
-        .whatsapp-button{background-color: rgb(60, 219, 12);color:white;border:none;
-        height:36px;
-        width:105px;
-        border-radius: 5px;
-        cursor:pointer;}
-    
-        .whatsapp-button:hover{
-        background-color: brown;
-    }
-    .whatsapp-button:active{
-        background-color: aqua;
-    }
-    
-        </style>
-       
-
-        <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website</title>
-    <style>
-        .blue-text {
-            color: rgb(22, 226, 114);
-        }
-    </style>
-</head>
-<body>
-    <h1 class="blue-text">WELCOME TO MY WEBSITE</h1>
-</body>
-</html>
-<h2> About me </h2>
-
-<img src="mywebdp.jpg" alt="Glovias Moh-Degai" style="width:150px;height:auto;border-radius:20%;">
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Glovias Moh-Degai's Website</title>
+    <title>Moh-Degai's Digital Realm</title>
     <style>
+        /* General Styles */
         body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.7;
             margin: 0;
             padding: 0;
-            background-color: #e9f5ff;
-        }
-        header {
-            background: #0056b3; /* Darker blue for header */
+            background: #121212; /* Dark Background */
             color: #fff;
-            padding: 20px 0;
+            overflow-x: hidden; /* Prevent horizontal scroll */
+        }
+
+        /* Preloader */
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #121212;
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 0.5s ease; /* Fade out preloader */
+        }
+
+        #preloader.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .loader {
+            border: 8px solid #f3f3f3;
+            border-top: 8px solid #3498db;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            animation: spin 2s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(to right, #3498db, #8e44ad); /* Gradient Header */
+            color: #fff;
+            padding: 50px 0;
             text-align: center;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
         }
+
+        header h1 {
+            font-size: 3.5em;
+            font-weight: 700;
+            margin: 0;
+            letter-spacing: 1.5px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        header p {
+            font-size: 1.2em;
+            margin-top: 15px;
+            font-style: italic;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* Animated Background Bubbles */
+        .bubbles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            top: 0;
+            left: 0;
+            z-index: 0;
+        }
+
+        .bubbles li {
+            position: absolute;
+            display: block;
+            list-style: none;
+            width: 20px;
+            height: 20px;
+            background: rgba(255, 255, 255, 0.15);
+            animation: animateBubbles 20s linear infinite;
+            bottom: -150px;
+            border-radius: 50%;
+            transition: background 0.3s ease;
+        }
+
+        .bubbles li:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .bubbles li:nth-child(1) { left: 25%; animation-delay: 0s; }
+        .bubbles li:nth-child(2) { left: 10%; animation-delay: 2s; width: 30px; height: 30px; }
+        .bubbles li:nth-child(3) { left: 70%; animation-delay: 4s; }
+        .bubbles li:nth-child(4) { left: 40%; animation-delay: 0s; width: 60px; height: 60px; animation-duration: 12s; }
+        .bubbles li:nth-child(5) { left: 65%; animation-delay: 0s; }
+        .bubbles li:nth-child(6) { left: 75%; animation-delay: 3s; }
+        .bubbles li:nth-child(7) { left: 35%; animation-delay: 7s; width: 80px; height: 80px; animation-duration: 17s; }
+        .bubbles li:nth-child(8) { left: 50%; animation-delay: 15s; }
+        .bubbles li:nth-child(9) { left: 20%; animation-delay: 2s; width: 40px; height: 40px; animation-duration: 10s; }
+        .bubbles li:nth-child(10) { left: 85%; animation-delay: 0s; animation-duration: 11s; }
+
+        @keyframes animateBubbles {
+            0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+            10% { opacity: 1; }
+            80% { opacity: 1; }
+            100% { transform: translateY(-800px) rotate(360deg); opacity: 0; }
+        }
+
+        /* Container Styles */
         .container {
-            max-width: 800px;
-            margin: 20px auto;
-            background: #ffffff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 95%; /* Make the container responsive */
+            margin: 50px auto;
+            background: #1e1e1e; /* Darker Container */
+            padding: 60px;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            position: relative;
+            z-index: 1;
+            opacity: 0; /* Initially hidden */
+            transform: translateY(20px); /* Move down a bit */
+            animation: fadeInUp 0.8s ease forwards; /* Fade in and move up */
         }
+
+        .container:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Profile Image */
+        .profile-container {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+            transition: transform 0.4s ease;
+            border: 4px solid #3498db;
+            max-width: 100%; /* Make the image responsive */
+            height: auto; /* Maintain aspect ratio */
+            animation: pulse 2s infinite alternate; /* Add pulse animation */
+        }
+
+        .profile-img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Typography */
+        h2 {
+            color: #3498db;
+            font-weight: 700;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 15px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+            animation: slideInLeft 1s ease forwards; /* Slide in from left */
+            transform: translateX(-20px); /* Initially off-screen */
+            opacity: 0;
+        }
+
+        p {
+            color: #ddd;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 1.2s ease forwards; /* Fade in */
+            opacity: 0;
+        }
+
+        /* Button Styles */
+        .action-buttons {
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .social-button, .whatsapp-button, .youtube-button {
+            display: inline-block;
+            padding: 15px 35px;
+            border-radius: 10px;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: background-color 0.4s ease, transform 0.4s ease, box-shadow 0.4s ease;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+            margin: 0 15px;
+            border: none;
+            cursor: pointer;
+            animation: zoomIn 1.4s ease forwards; /* Zoom in */
+            transform: scale(0.8); /* Initially smaller */
+            opacity: 0;
+        }
+
+        .whatsapp-button {
+            background-color: #25D366;
+        }
+
+        .whatsapp-button:hover {
+            background-color: #128C7E;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+        }
+
+        .youtube-button {
+            background-color: #FF0000;
+        }
+
+        .youtube-button:hover {
+            background-color: #CC0000;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+        }
+
+        .social-button.facebook {
+            background-color: #1877F2;
+        }
+
+        .social-button.facebook:hover {
+            background-color: #0d4ea0;
+        }
+
+        .social-button.tiktok {
+            background-color: #000000; /* Or a TikTok-specific color */
+        }
+
+        .social-button.tiktok:hover {
+            background-color: #333333;
+        }
+
+        /* Footer Styles */
         footer {
             text-align: center;
-            padding: 15px 0;
-            background: #0056b3; /* Darker blue for footer */
+            padding: 30px 0;
+            background: #0a0a0a; /* Even Darker Footer */
             color: #fff;
             position: relative;
             bottom: 0;
             width: 100%;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.3);
+            font-size: 0.9em;
+            letter-spacing: 0.8px;
+            animation: slideInUp 1.6s ease forwards; /* Slide in from bottom */
+            transform: translateY(20px); /* Initially off-screen */
+            opacity: 0;
         }
-        h2 {
-            color: #003d80; /* Slightly darker blue for headings */
-        }
-        p {
-            color: #333; /* Darker text for readability */
-        }
-        .whatsapp-button, .youtube-button {
-            display: inline-block;
-            padding: 10px 20px;
-            border-radius: 5px;
-            color: #fff;
-            text-decoration: none;
-            font-weight: bold;
-            text-align: center;
-            margin-top: 20px;
-        }
-        .whatsapp-button {
-            background-color: #25D366; /* WhatsApp green */
-        }
-        .whatsapp-button:hover {
-            background-color: #128C7E; /* Darker green on hover */
-        }
-        .youtube-button {
-            background-color: #FF0000; /* YouTube red */
-        }
-        .youtube-button:hover {
-            background-color: #CC0000; /* Darker red on hover */
-        }
-        @media (max-width: 600px) {
-            .container {
-                padding: 15px;
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header {
+                padding: 40px 0;
             }
-            header, footer {
-                padding: 15px 0;
+
+            header h1 {
+                font-size: 2.8em;
+            }
+
+            .container {
+                padding: 40px;
+                margin: 30px auto;
+            }
+
+            .profile-img {
+                width: 160px;
+                height: 160px;
+            }
+
+            .action-buttons {
+                margin-top: 30px;
+            }
+
+            .social-button, .whatsapp-button, .youtube-button {
+                padding: 12px 30px;
+                font-size: 0.9em;
+                margin: 0 10px;
+            }
+        }
+
+        /* Additional Techy Styles */
+        .techy-accent {
+            color: #3498db;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Glowing Text Effect */
+        .glowing-text {
+            text-shadow: 0 0 10px #3498db, 0 0 20px #3498db, 0 0 30px #3498db;
+        }
+
+        /* Wave Animation */
+        .wave {
+            position: relative;
+            width: 100%;
+            height: 50px;
+            overflow: hidden;
+        }
+
+        .wave::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 200%;
+            height: 100%;
+            background: url('wave.png'); /* Replace with your wave image */
+            background-size: cover;
+            opacity: 0.4;
+            animation: waveAnimation 10s linear infinite;
+        }
+
+        @keyframes waveAnimation {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* Light Container */
+        .light-container {
+            background: #333333; /* Lighter Container - Dark Grey */
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInLeft {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes zoomIn {
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes slideInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            100% {
+                transform: scale(1.1);
             }
         }
     </style>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<header>
-    <h1>Welcome to My Personal Website</h1>
-</header>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader"></div>
+    </div>
 
-<div class="container">
-    <h2>Hello! My name is Glovias Moh-Degai</h2>
-    <p>I am a 21-year-old student at Kenyatta University, pursuing a degree in Education. I am passionate about teaching and dedicated to shaping young minds for a brighter future.</p>
+    <header>
+        <div class="bubbles">
+            <li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+        </div>
+        <h1>Moh-Degai's Digital Realm</h1>
+        <p class="glowing-text">Crafting the Future, One Byte at a Time</p>
+    </header>
 
-    <p>In addition to my studies, I serve as a Sunday School teacher at GOD'S CHOSEN MINISTRY. My faith is an integral part of my life, and I am born again, finding strength and guidance in my beliefs.</p>
+    <div class="container">
+        <div class="profile-container">
+            <img src="mywebdp.jpg" alt="Moh-Degai" class="profile-img">
+        </div>
+        <h2>Hello! I'm Moh-Degai</h2>
+        <p>A passionate digital explorer, tech enthusiast, and creative innovator. I'm also a <span class="techy-accent">21-year-old student at Kenyatta University</span>, pursuing my academic dreams while making waves in the digital world. Welcome to my digital space, where innovation meets dedication!</p>
+        <p>Beyond my studies, I am <span class="techy-accent">born again</span> and find purpose as a <span class="techy-accent">Sunday School teacher at God's Chosen Ministry</span>. My faith guides my actions and inspires my creativity.</p>
+    </div>
 
-    <p>I belong to the Luhya community, and I cherish the rich culture and traditions that it brings. My journey in life has been shaped by the values and experiences of my heritage.</p>
+    <div class="container light-container">
+        <h2><span class="techy-accent">Tech Solutions & Creative Design</span></h2>
+        <p>Welcome to my digital space! I’m Moh, a passionate website designer, logo maker, and tech specialist, dedicated to crafting sleek, functional websites and eye-catching brand identities. Whether you need a modern, responsive website or a logo that speaks to your brand’s essence, I bring creativity and precision to every project.</p>
 
-    <p>At this stage in my life, I am single and focused on my studies and personal growth. I am not currently seeking relationships, as I believe in taking the time to fully develop myself and my ambitions.</p>
+        <p>Beyond design, I specialize in technology solutions for phones, laptops, and computers—ensuring seamless performance, troubleshooting, and optimization. My goal is to provide businesses and individuals with high-quality tech solutions and branding that elevate their presence in the digital world.</p>
 
-    <p>Thank you for visiting my website! I look forward to connecting with like-minded individuals and sharing my journey with you.</p>
+        <p>With a keen eye for detail and a commitment to delivering excellence, I turn ideas into reality. Let’s collaborate and build something extraordinary!</p>
+    </div>
 
-    <p>Wanna say Hi to me?</p>
-    <a class="whatsapp-button" href="https://wa.me/254769688456?text=Hi%20Moh" target="_blank">Chat on WhatsApp</a>
+    <div class="container">
+        <h2>Connect With Me</h2>
+        <p>Thank you for visiting my digital realm! I look forward to connecting with like-minded individuals and embarking on exciting digital journeys together.</p>
 
-    <p>Check out my YouTube channel!</p>
-    <a class="youtube-button" href="https://www.youtube.com/@Tr_Moh_tech" target="_blank">Visit My YouTube Channel</a>
-</div>
+        <div class="action-buttons">
+            <a class="social-button facebook" href="https://www.facebook.com/profile.php?id=61575028957216" target="_blank">Follow me on Facebook</a>
+            <a class="social-button tiktok" href="https://www.tiktok.com/@tr_moh_?_t=ZM-8vyP2empPMN&_r=1" target="_blank">Follow me on TikTok</a>
+            <a class="whatsapp-button" href="https://wa.me/254769688456?text=Hi%20Moh" target="_blank">Chat on WhatsApp</a>
+            <a class="youtube-button" href="https://www.youtube.com/@Tr_Moh_tech" target="_blank">Visit My YouTube Channel</a>
+        </div>
+    </div>
 
-<div class="container">
-    
-    <h3>Personal Interests and Hobbies</h3>
-    <p>I have a passion for playing the piano and reading plays. Music allows me to express myself, while acting offers me a chance to step into different characters and explore their stories. Traveling is another passion of mine; I enjoy exploring new places and cultures, which enriches my perspective and inspires my creativity.</p>
-    
-    <h3>Educational Journey</h3>
-    <p>My educational journey has been a challenging one. It hasn’t always been smooth, but I firmly believe that God is faithful. I've faced struggles, battling against my own weaknesses and sometimes the influence of bad company. However, these experiences have taught me resilience and the importance of maintaining a positive outlook, no matter the circumstances.</p>
+    <div class="wave"></div>
 
-    <h3>Teaching Philosophy</h3>
-    <p>As a future educator, I believe in creating a nurturing environment where students feel safe and inspired to learn. My goal is to instill a love for knowledge and help shape young minds into critical thinkers and compassionate individuals. I strive to make learning engaging and relevant, encouraging students to explore their talents and interests.</p>
+    <footer>
+        <p>&copy; TeacherMoh2025</p>
+    </footer>
 
-    <h3>Cultural Heritage</h3>
-    <p>Being from the Luhya community, I cherish our rich culture and traditions, especially our food! You know you're Luhya when your meal isn't complete without <em>ugali</em> and <em>sukuma wiki</em>. We take our meals seriously—so seriously, in fact, that if you invite a Luhya to your home, you better have enough food, or you might find yourself on the receiving end of a highly creative “missing food” monologue!</p>
-    
-    <p>In fact, Luhya gatherings are like a culinary Olympics: who can eat the most <em>nyama choma</em> and still have room for dessert? It's a competitive sport and a cherished tradition!</p>
+    <script>
+        // Preloader
+        document.addEventListener("DOMContentLoaded", function() {
+            const preloader = document.getElementById('preloader');
 
-</div>
+            // Fade out preloader after 2 seconds
+            setTimeout(() => {
+                preloader.classList.add('hidden');
+            }, 2000);
 
-<footer>
-    <p>&copy; 2025 Glovias Moh-Degai</p>
-</footer>
+            // Remove preloader from DOM after fade out
+            setTimeout(() => {
+                preloader.style.display = 'none';
+            }, 2500); // .5s fade effect
 
+        });
+    </script>
 </body>
-</html>
-
-
+    </html>
+    
